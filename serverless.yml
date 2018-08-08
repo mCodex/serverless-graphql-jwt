@@ -1,0 +1,33 @@
+service: serverless-graphql-jwt
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    packager: 'yarn'
+    includeModules:
+      forceInclude:
+        - apollo-server-lambda
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  graphql:
+    handler: src/index.graphql
+    events:
+      - http:
+          path: graphql
+          method: post
+          cors: true
+  playground:
+    handler: src/index.playground
+    events:
+    - http:
+        path: playground
+        method: get
+        cors: true

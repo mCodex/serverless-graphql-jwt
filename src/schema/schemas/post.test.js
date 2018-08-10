@@ -14,8 +14,8 @@ const query = `{
   hello
 }`;
 
-describe('Autenticacao', () => {
-  it('should match snapshot', async () => {
+describe('Hello endpoint', () => {
+  it('should be tested', async () => {
     const { data } = await graphql(schema, query);
     expect(data.hello).toEqual('Hello World');
   });

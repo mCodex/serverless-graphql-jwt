@@ -52,5 +52,10 @@
     "moduleNameMapper": {
       "^mongoose$": "<rootDir>/node_modules/mongoose"
     }
+  },
+  "greenkeeper": {
+    "ignore": [
+      "eslint"
+    ]
   }
 }

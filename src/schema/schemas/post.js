@@ -1,11 +1,6 @@
-import { gql } from 'apollo-server-lambda';
 import { makeExecutableSchema } from 'graphql-tools';
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
+import typeDefs from '../definitions/hello';
 
 // Provide resolver functions for your schema fields
 const resolvers = {

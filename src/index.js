@@ -3,7 +3,7 @@ import lambdaPlayground from 'graphql-playground-middleware-lambda';
 import jwt from 'jsonwebtoken';
 import db from 'mongoose';
 
-import schema from './schema';
+import schema from './graphql';
 
 require('dotenv-safe').config();
 
@@ -18,7 +18,7 @@ const server = new ApolloServer({
 
     // Caso não haja nenhuma conexão, será necessário abrir uma
     if (mongoState === 0) {
-      await db.connect(process.env.DB);
+      await db.connect(process.env.DB_DEV);
     }
 
     // const id = 1;

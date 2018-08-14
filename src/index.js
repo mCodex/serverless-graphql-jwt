@@ -16,20 +16,26 @@ const server = new ApolloServer({
 
     const mongoState = db.connection.readyState;
 
-    // Caso não haja nenhuma conexão, será necessário abrir uma
+    // Sometimes mongoDB is not connect.
     if (mongoState === 0) {
       await db.connect(process.env.DB_DEV);
     }
 
-    // const id = 1;
-    // const token = jwt.sign({ id }, process.env.SECRET, {
-    //   expiresIn: 300
-    // });
-    // const verifiedToken = jwt.verify(token, process.env.SECRET);
+    return ({
+      headers: event.headers,
+      functionName: context.functionName,
+      event,
+      context,
+    });
   }
 });
 
-exports.graphql = server.createHandler();
+exports.graphql = server.createHandler({
+  cors: {
+    origin: '*',
+    credentials: true
+  }
+});
 
 exports.playground = lambdaPlayground({
   endpoint: '/graphql',

@@ -6,7 +6,8 @@ import { insertUser, getUser, insertUserToken } from '../../db';
 
 const resolvers = {
   Query: {
-    async findUser(_, { _id }) {
+    async findUser(_, { _id }, ctx) {
+      console.log(ctx.headers);
       const user = await getUser(_id);
       return user;
     },

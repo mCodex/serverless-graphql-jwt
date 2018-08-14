@@ -11,6 +11,9 @@ const UserSchema = new mongoose.Schema({
     type: 'String',
     required: true
   },
+  token: {
+    type: 'String',
+  }
 }, { collection: 'user' });
 
 let state;

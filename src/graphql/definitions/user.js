@@ -4,7 +4,8 @@ const typeDefs = gql`
   type User {
       _id: ID,
       email: String!
-      password: String!
+      password: String!,
+      token: String
     }
 
   # the schema allows the following query:

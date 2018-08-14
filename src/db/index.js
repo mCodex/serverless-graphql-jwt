@@ -1,6 +1,7 @@
-import { insertUser, getUser } from './queries/user';
+import { insertUser, getUser, insertUserToken } from './queries/user';
 
 export {
   insertUser,
-  getUser
+  getUser,
+  insertUserToken
 };

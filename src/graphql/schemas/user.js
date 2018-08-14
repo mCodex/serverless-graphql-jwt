@@ -2,7 +2,7 @@ import { makeExecutableSchema } from 'graphql-tools';
 
 import typeDefs from '../definitions/user';
 
-import { insertUser, getUser } from '../../db';
+import { insertUser, getUser, insertUserToken } from '../../db';
 
 const resolvers = {
   Query: {
@@ -14,7 +14,9 @@ const resolvers = {
   Mutation: {
     async createUser(_, { email, password }) {
       const user = await insertUser(email, password);
-      return user;
+      const { _id } = user;
+      const userWithToken = await insertUserToken(_id);
+      return userWithToken;
     },
   }
 };

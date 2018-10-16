@@ -15,7 +15,7 @@
     "dotenv-safe": "^6.0.0",
     "graphql": "^14.0.0",
     "graphql-playground-middleware-lambda": "^1.7.2",
-    "graphql-tools": "^3.1.1",
+    "graphql-tools": "^4.0.0",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.8",
     "mongoose-timestamp": "^0.6.0"

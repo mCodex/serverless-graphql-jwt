@@ -1,0 +1,8 @@
+{
+  "upgrade": true,
+  "reject": [
+    "eslint",
+    "eslint-plugin-react",
+    "eslint-plugin-jest"
+  ]
+}

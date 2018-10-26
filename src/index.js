@@ -5,7 +5,7 @@ import db from 'mongoose';
 
 import schema from './graphql';
 
-require('dotenv-safe').config();
+require('dotenv').config();
 
 db.Promise = require('bluebird');
 

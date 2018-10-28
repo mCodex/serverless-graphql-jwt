@@ -8,7 +8,7 @@ This project was made just for studying.
 * GraphQL
 * Apollo Server
 * JWT
-* MongoDB (Will be available soon)
+* MongoDB
 * Jest
 
 ## Installation
